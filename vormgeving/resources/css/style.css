@@ -39,7 +39,7 @@ h1 {
     padding: 5px;
     margin: 10px;
     display: inline-flex;
-    width: 450px;
+    width: 45%;
 }
 
 .item:hover{
@@ -67,7 +67,7 @@ h1 {
 }
 
 .item:hover .right ul{
-    color: black;
+    color: black;           
 }
 
 .detail {
@@ -106,3 +106,4 @@ footer {
     margin-top: 10px;
     text-align: center;
 }
+

@@ -1,18 +1,14 @@
 <?php
-// Toon fouten tijdens ontwikkeling
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 
 // Database-instellingen
 $host = 'localhost';
-$db   = 'character_app';  // jouw databasenaam
-$user = 'root';           // standaard bij XAMPP/Laragon
-$pass = '';               // vaak leeg op localhost
-$charset = 'utf8mb4';
+$db   = 'character_app';  
+$user = 'root';           
+$pass = '';               
+
 
 // DSN = beschrijving van de verbinding
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+$dsn = "mysql:host=$host;dbname=$db";
 
 // Veilige PDO-opties
 $options = [
