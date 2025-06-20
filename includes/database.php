@@ -21,7 +21,18 @@ $options = [
 try {
     $conn = new PDO($dsn, $user, $pass, $options);
 } catch (PDOException $e) {
-    echo "Databaseverbinding mislukt: " . $e->getMessage();
-    exit;
+    die("Databaseverbinding mislukt: " . $e->getMessage());
+}
+
+function getAllCharacters(PDO $conn): array{
+    $stmt = $conn->query("SELECT * FROM characters ORDER BY name ASC");
+    return $stmt->fetchAll();
+}
+
+function getCharacterById(PDO $conn, $id): ?array{
+    $stmt = $conn->prepare("SELECT * FROM characters WHERE id = ?");
+    $stmt->execute([$id]);
+    $character = $stmt->fetch();
+    return $character ?: null;
 }
 ?>

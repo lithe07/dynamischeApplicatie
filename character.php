@@ -3,9 +3,7 @@ require 'includes/database.php';
 
 $id = ($_GET['id'] ?? 0);
 
-$stmt = $conn->prepare("SELECT * FROM characters WHERE id = ?");
-$stmt->execute([$id]);
-$char = $stmt->fetch();
+$char = getCharacterById($conn, $id);
 
 if (!$char) {
     die("Character niet gevonden.");

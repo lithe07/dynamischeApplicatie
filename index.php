@@ -2,8 +2,7 @@
 require 'includes/database.php';
 
 // Alle characters ophalen
-$stmt = $conn->query("SELECT * FROM characters ORDER BY name ASC");
-$characters = $stmt->fetchAll();
+$characters = getAllCharacters($conn);
 $totaal = count($characters);
 
 $pageTitle = 'Alle Characters';
